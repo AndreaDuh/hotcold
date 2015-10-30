@@ -1,0 +1,10 @@
+body{
+	background-color: #ecf0f1;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.logo {
+	text-align: center;
+	font-size: 63px;
+	font-weight: 700;
+}
