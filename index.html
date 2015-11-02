@@ -5,12 +5,23 @@
 	<title>Hot or Cold</title>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,800' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/normalize.css">
 </head>
 <body>
+	<nav class="navbar">
+		<a class="new" href="#">+ NEW GAME</a>
+	</nav>
 	<div class="logo">
 		<span style="color: #c0392b">Hot</span> <span style="color: #7f8c8d">or</span> <span style="color: #3498db">Cold</span>
-	</div> 
-
+	</div>
+	<div class="form">
+		<form action="">
+			<h1>Try to guess a number between 10 to 100!</h1>
+			<p>Simply try to guess a number between 1 to 100. As you guess, this program will tell you if you are getting warmer or colder until you guess the right number!</p>
+			<input type="text" id="input-text"/> <br>
+			<input type="submit" id="submit" class="button" name="submit" value="submit"/>
+		</form>
+	</div>
 <script src="js/main.js"></script>
 <script src="js/jquery-2.1.4.min.js"></script>	
 </body>
