@@ -10,8 +10,7 @@ body{
 	text-align: center;
 	font-weight: 700;
 	font-size: 24px;
-	padding-top: 35px;
-	
+	padding-top: .1px;	
 }
 
 .navbar a {
@@ -22,6 +21,11 @@ body{
 .navbar a:hover {
 	color: #7f8c8d;
 }
+
+ li, ul {
+ 	list-style: none;
+ 	text-align: center;
+ }
 
 .logo {
 	width: 550px;
@@ -34,7 +38,7 @@ body{
 	margin-top: 100px;
 }
 
-.form {
+.game {
 	text-align: center;
 }
 
@@ -44,7 +48,7 @@ body{
 	height: 25px;
 }
 
-#submit  {
+#guessButton {
 	background-color: #3bd27a;
 	font-size: 12px;
 	text-transform: uppercase;
@@ -66,4 +70,9 @@ p {
 	width: 650px;
 	margin: 0 auto;
 	padding-bottom: 30px;
+}
+
+#feedback {
+	text-align: center;
+	color: #34495e;
 }
