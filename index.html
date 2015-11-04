@@ -24,13 +24,15 @@
 		<form>
 			<h1>Try to guess a number between 1 to 100!</h1>
 			<p>Simply try to guess a number between 1 to 100. As you guess, this program will tell you if you are getting warmer or colder until you guess the right number!</p>
-			<input type="text" id="input-text" name="userGuess" id="userGuess" autocomplete="off"/> <br>
+			<input type="text" id="userGuess" name="userGuess" id="userGuess" autocomplete="off"/> <br>
 			<input type="submit" id="guessButton" class="button" name="submit" value="submit"/>
 		</form>
 		<h2 id ="feedback">Can you guess it right?</h2>
-		<p>Guess <span id="count">0</span></p>
+		<p>Guess # <span id="count">0</span>!</p>
 
-		<ul id="guessList" class="guessBox clearfix"></ul>
+		<ul id="guessList" class="guessBox clearfix">
+			<h3>Your guesses so far:</h3>	
+		</ul>
 	</section>
 	
 </body>
