@@ -3,6 +3,7 @@ $(document).ready(function() {
 /*--- All Variables being used. ---*/
 	var secretNumber = 0;
 	var userGuess = 0;
+    var guessCount = 0;
 	var finish = false; 
 
 /*--- This generates a random number ---*/
@@ -15,36 +16,26 @@ $(document).ready(function() {
 
 /*--- This will let the user know if they are getting warm or cold. ---*/
 	function positiveAmount() {
-		if (userGuess / secretNumber === 1) {
+        var difference = Math.abs(secretNumber - userGuess);
+		if (difference === 0) {
 			setFeedback ("Correct! You did it!");
 			finish = true;
-			} else if ((secretNumber - userGuess) > 60.5) {
+			} else if ((difference) > 60) {
             setFeedback("Too cold! Ice Age 2.0 here we go.");
-            } else if ((secretNumber - userGuess) > 50.5) {
+            } else if ((difference) > 50) {
             setFeedback("I think I hear Vanilla Ice singing Ice Ice Baby. Still cold.");
-            } else if ((secretNumber - userGuess) > 40.5) {
+            } else if ((difference) > 40) {
             setFeedback("Getting closer, but still too cool.");
-            } else if ((secretNumber - userGuess) > 30.5) {
+            } else if ((difference) > 30) {
             setFeedback("It feels like fall; not cold or hot, just warm.");
-            } else if((secretNumber - userGuess) > 20.5) {
+            } else if((difference) > 20) {
             setFeedback("Warm enough to wear a tank top. Keep guessing!");
-            } else if ((secretNumber - userGuess) > 7.5) {
+            } else if ((difference) > 7) {
             setFeedback("Ryan Gosling hot!");
-            } else if ((secretNumber - userGuess) > 1.5) {
+            } else if((difference) > 1) {
             setFeedback("Burn baby burn! So close!");
-            } else if ((secretNumber - userGuess) > 0.5){
-            setFeedback("The sun is too close. Body melting...just keep guessing.");
         	} else {
        		}
-    }
-
-/*--- Compares whether the difference is positive or negative --*/
-    function comparisonAmount(){
-        if (userGuess - secretNumber > 0) {
-            negativeAmount();
-        } else {
-            positiveAmount();
-        }
     }
 
 /*--- Function that sends feedback --*/
@@ -80,23 +71,23 @@ function checkInput(){
     if(isNaN(userGuess)) {
         alert("Please enter a number from 1 - 100!");
     } else if(userGuess === " ") {
-        alert("Well, you have to input a number");
+        alert("Put in a number!");
     } else if (userGuess < 0 || userGuess > 100) {
         alert("Plese enter a number from 1 - 100!");
     } else {
-        comparisonAmount();
+        positiveAmount();
         console.log("User guess = " + userGuess);
         $('#userGuess').val('');
         guessCount++;
         setCount(guessCount);
-        $('ul#guessList').append("<li>" + userGuess + "</li>");
+        $('#guessList').append("<li>" + userGuess + "</li>");
     }
 }
 
 /*--- To get user's input --*/
     $("form").submit(function(event){
         event.preventDefault();
-        //if user finished the game, it doesn't allow him to continue!
+        //if user finished the game, it doesn't allow them to continue!
         if(!finish){
             userGuess = $('#userGuess').val();
             checkInput();
@@ -106,4 +97,3 @@ function checkInput(){
     });
 
  });
-
